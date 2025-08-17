@@ -1,0 +1,8 @@
+<div class="dialog-overlay" (click)="close()">
+  <div class="dialog-box" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">×</button>
+    <h2>{{ data.title }}</h2>
+    <img [src]="data.img" alt="{{ data.title }}">
+    <p>{{ data.description }}</p>
+  </div>
+</div>

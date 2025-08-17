@@ -1,0 +1,35 @@
+<section class="testimonials-section fade-up">
+  <div class="left">
+    <h6 class="sub-title">Read Testimonials</h6>
+    <h2 class="main-title">
+      It's always a joy to hear that the work we do has positive reviews
+    </h2>
+  </div>
+
+  <div class="right">
+    <!-- Testimonial cards -->
+    <div
+      class="testimonial"
+      *ngFor="let t of testimonials; let i = index"
+      [class.active]="i === currentIndex"
+    >
+      <p>{{ t.quote }}</p>
+      <div class="author">
+        <img [src]="t.image" [alt]="t.name" />
+        <div class="info">
+          <h4>{{ t.name }}</h4>
+          <span>{{ t.role }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation dots -->
+    <div class="dots">
+      <span
+        *ngFor="let t of testimonials; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+      ></span>
+    </div>
+  </div>
+</section>

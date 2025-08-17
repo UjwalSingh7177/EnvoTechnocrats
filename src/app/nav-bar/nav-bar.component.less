@@ -1,0 +1,188 @@
+/* Reset basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+  background: #081229;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.top-bar .social-icons a {
+  color: white;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.inquire-btn {
+  background: linear-gradient(135deg, #f45b26, #ff7730);
+  color: white;
+  padding: 0.3rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(244, 91, 38, 0.3);
+}
+
+.inquire-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(244, 91, 38, 0.4);
+  background: linear-gradient(135deg, #ff7730, #f45b26);
+}
+
+.inquire-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 5px rgba(244, 91, 38, 0.2);
+}
+
+
+/* Main header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 109px;
+  margin-right: 10px;
+}
+
+.logo-text h1 {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.logo-text p {
+  color: #144e83;
+  font-weight: 500;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.info-box i {
+  font-size: 1.5rem;
+  color: #f45b26;
+  margin-right: 10px;
+}
+
+.info-box .highlight {
+  color: #f45b26;
+  font-weight: 600;
+}
+
+/* Navigation */
+.nav {
+  background: #081229;
+}
+
+.nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav .menu li a {
+  color: white;
+  padding: 1rem 1.5rem;
+  display: block;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.nav .menu li a:hover {
+  background: #0d1f3d;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .inquire-btn {
+  background: linear-gradient(135deg, #f45b26, #ff7730);
+  color: white;
+  padding: 0.2rem 8.7rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 60%;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(244, 91, 38, 0.3);
+}
+  .email{
+    font-size: 13px;
+  }
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .info-box {
+    justify-content: center;
+  }
+
+  /* Hide menu by default on mobile */
+  .nav .menu {
+    flex-direction: column;
+    display: none;
+    background: #081229;
+    width: 100%;
+  }
+
+  /* Show menu when .show is added */
+  .nav .menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 1rem;
+  }
+}

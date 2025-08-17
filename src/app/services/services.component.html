@@ -1,0 +1,47 @@
+<section class="hero fade-up">
+  <!-- Video background -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/assets/serviceFlyer.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay for dark effect -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>WE BUILD<br><span>GREAT PROJECTS</span></h1>
+      <p>
+        Far far away, behind the word mountains, far from the countries Vokalia
+        and Consonantia, there live the blind texts. Separated they live in
+        Bookmarksgrove.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-orange">OUR SERVICES</button>
+        <button class="btn btn-white">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section fade-up">
+  <div class="container">
+    <h2 class="section-title">We Offer Services</h2>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.img" [alt]="service.title" class="service-image" />
+        <div class="service-icon">
+          <img src="assets/sicon.png" [alt]="service.title + ' Icon'" />
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+       <a href="" class="btn dark-btn" (click)="openDialog(service); $event.preventDefault()">READ MORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-service-dialog 
+  *ngIf="selectedService" 
+  [data]="selectedService" 
+  (closeDialog)="closeDialog()">
+</app-service-dialog>

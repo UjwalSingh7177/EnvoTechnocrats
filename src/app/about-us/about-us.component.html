@@ -1,0 +1,141 @@
+<section class="hero fade-up">
+  <!-- Video background -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/assets/service-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay for dark effect -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>WE BUILD<br><span>GREAT PROJECTS</span></h1>
+      <p>
+        Far far away, behind the word mountains, far from the countries Vokalia
+        and Consonantia, there live the blind texts. Separated they live in
+        Bookmarksgrove.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-orange">OUR SERVICES</button>
+        <button class="btn btn-white">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="intro-section fade-up">
+  <div class="container">
+    <div class="intro-grid">
+      
+      <!-- Left: Image -->
+      <div class="intro-image">
+        <div class="image-wrapper">
+          <img src="assets/worker.jpg" alt="Construction Worker">
+          <div class="corner-accent"></div>
+        </div>
+      </div>
+
+      <!-- Right: Text -->
+      <div class="intro-text">
+        <p class="welcome-text">WELCOME TO WILCON</p>
+        <h1>Wilcon A Construction Company</h1>
+        <p class="sub-heading">
+          We're in this business since 1975 and We provide the best industrial services
+        </p>
+
+        <!-- <div class="highlight-box">
+          <img src="assets/crane.jpg" alt="Crane Icon">
+        </div> -->
+
+        <p class="description">
+          Far far away, behind the word mountains, far from the countries Vokalia 
+          and Consonantia, there live the blind texts. Separated they live in 
+          Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        </p>
+
+        <!-- Video Section -->
+        <div class="video-section">
+          <div class="video-thumb">
+            <img src="assets/s1.jpg" alt="Work Video">
+            <div class="play-button">▶</div>
+          </div>
+          <p class="video-text">This is how we work on our clients, Watch video</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="banner fade-up">
+  <div class="banner-overlay">
+    <div class="banner-content">
+      <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICES</h2>
+      <p>We can manage your dream building A small river named Duden flows by their place</p>
+      <a href="#" class="btn-quote">REQUEST A QUOTE</a>
+    </div>
+  </div>
+</section>
+<section class="hero-section fade-up">
+  <div class="container hero-container">
+    <!-- Left content -->
+    <div class="hero-text">
+      <h6 class="sub-heading">WILCON A CONSTRUCTION COMPANY</h6>
+      <h1 class="main-heading">Best Provider for Industrial Services</h1>
+      <p class="highlight-text">
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+      </p>
+      <p class="desc-text">
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+      </p>
+    </div>
+
+    <!-- Right content -->
+    <div class="hero-image-box">
+      <img src="assets/s2.jpg" alt="Construction" class="main-image">
+
+      <div class="stats-wrapper">
+        <div class="stat-card orange-bg">
+          <span class="stat-number">44,777</span>
+          <p class="stat-text">Projects Completed</p>
+        </div>
+        <div class="stat-card white-bg">
+          <span class="stat-number dark-text">51,213</span>
+          <p class="stat-text dark-text">Happy Customers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-testimonials></app-testimonials>
+
+<section class="team-section">
+  <h5 class="subtitle">OUR TEAM</h5>
+  <h2 class="title">Our Team</h2>
+
+  <div class="team-container">
+    <div class="team-card" *ngFor="let member of teamMembers">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <img [src]="member.image" alt="{{ member.name }}">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </div>
+
+        <!-- Back -->
+        <div class="card-back">
+          <p>{{ member.description }}</p>
+          <a href="#" class="btn">Know More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
