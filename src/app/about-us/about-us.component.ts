@@ -10,6 +10,9 @@ import * as AOS from 'aos';
 export class AboutUsComponent implements OnInit, AfterViewInit  {
 
     constructor(private el: ElementRef) {}
+    startParagraphTyping = false; 
+    showButtons = false; 
+     
     projects = [
       { title: 'BUILDING A CONDOMINIUM', img: 'assets/s3.jpg', location: 'San Francisco, California, USA' },
       { title: 'BUILDING A CONDOMINIUM', img: 'assets/s1.jpg', location: 'San Francisco, California, USA' },

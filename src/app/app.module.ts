@@ -15,6 +15,7 @@ import { ServicesComponent } from './services/services.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { BlogUiComponent } from './blog-ui/blog-ui.component';
 import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
+import { TypingDirective } from './directives/typing.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ServiceDialogComponent } from './service-dialog/service-dialog.componen
     ServicesComponent,
     ProjectsComponent,
     BlogUiComponent,
-    ServiceDialogComponent
+    ServiceDialogComponent,
+    TypingDirective
   ],
   imports: [
     BrowserModule,

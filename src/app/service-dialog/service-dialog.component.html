@@ -2,7 +2,20 @@
   <div class="dialog-box" (click)="$event.stopPropagation()">
     <button class="close-btn" (click)="close()">×</button>
     <h2>{{ data.title }}</h2>
-    <img [src]="data.img" alt="{{ data.title }}">
-    <p>{{ data.description }}</p>
+
+    <!-- If detailed data exists -->
+    <div *ngIf="data.details; else defaultDesc" class="details-grid">
+      <div class="sector" *ngFor="let sector of getKeys(data.details)">
+        <h3>{{ sector }} Sector</h3>
+        <ul>
+          <li *ngFor="let point of data.details[sector]">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Default description -->
+    <ng-template #defaultDesc>
+      <p>{{ data.description }}</p>
+    </ng-template>
   </div>
 </div>

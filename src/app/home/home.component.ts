@@ -9,7 +9,9 @@ import * as AOS from 'aos';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(private el: ElementRef) {}
-    projects = [
+  startParagraphTyping = false;
+  showButtons = false;
+  projects = [
     { title: 'BUILDING A CONDOMINIUM', img: 'assets/s3.jpg', location: 'San Francisco, California, USA' },
     { title: 'BUILDING A CONDOMINIUM', img: 'assets/s1.jpg', location: 'San Francisco, California, USA' },
     { title: 'BUILDING A CONDOMINIUM', img: 'assets/s3.jpg', location: 'San Francisco, California, USA' },
@@ -21,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
   ngOnInit(): void {
+    // Initialize AOS animation
     AOS.init({
       duration: 1000,
       once: true
@@ -28,10 +31,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // First, tell TypeScript this is an HTMLElement
     const nativeEl = this.el.nativeElement as HTMLElement;
 
-    // Now querySelectorAll returns NodeListOf<HTMLElement>
+    // Fade-up scroll animation
     const fadeElements: HTMLElement[] = Array.from(
       nativeEl.querySelectorAll('.fade-up')
     );
@@ -50,5 +52,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, { threshold: 0.1 });
 
     fadeElements.forEach((el: HTMLElement) => observer.observe(el));
+
+    // --- Video autoplay fix ---
+    const video = nativeEl.querySelector<HTMLVideoElement>('video.hero-video');
+    if (video) {
+      video.muted = true; // required for autoplay in most browsers
+      video.play().catch(err => {
+        console.warn('Video autoplay failed:', err);
+      });
+    }
   }
 }

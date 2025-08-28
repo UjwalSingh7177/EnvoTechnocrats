@@ -8,16 +8,22 @@
   <!-- Overlay for dark effect -->
   <div class="hero-overlay">
     <div class="hero-content">
-      <h1>WE BUILD<br><span>GREAT PROJECTS</span></h1>
-      <p>
-        Far far away, behind the word mountains, far from the countries Vokalia
-        and Consonantia, there live the blind texts. Separated they live in
-        Bookmarksgrove.
-      </p>
-      <div class="hero-buttons">
-        <button class="btn btn-orange">OUR SERVICES</button>
-        <button class="btn btn-white">REQUEST A QUOTE</button>
-      </div>
+      <h1><span 
+        appTyping="WE BUILD GREAT PROJECTS"
+        [speed]="70"
+        (typingDone)="startParagraphTyping = true">
+      </span></h1>
+       <p *ngIf="startParagraphTyping"
+       appTyping="Far far away, behind the word mountains, far from the countries Vokalia
+       and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove."
+       [speed]="40"
+       (typingDone)="showButtons = true">
+    </p>
+
+    <div class="hero-buttons" *ngIf="showButtons">
+      <button class="btn btn-orange">OUR SERVICES</button>
+      <button class="btn btn-white">REQUEST A QUOTE</button>
+    </div>
     </div>
   </div>
 </section>

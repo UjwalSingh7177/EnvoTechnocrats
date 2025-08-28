@@ -12,4 +12,9 @@ export class ServiceDialogComponent {
   close() {
     this.closeDialog.emit();
   }
+
+  getKeys(obj: any): string[] {
+  return Object.keys(obj);
+}
+
 }
